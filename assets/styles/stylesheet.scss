@@ -8,7 +8,12 @@ html,
 body {
   overflow-x: hidden;
   width: 100vw;
-  font-family: 'Cormorant Garamond', YuGothic, serif;
+  font-family: 'Open Sans', YuGothic, serif;
+  color: $black;
+}
+
+i {
+  padding: 0 12px;
 }
 
 .hero {
@@ -21,4 +26,31 @@ body {
   background-image: url('https://images.unsplash.com/photo-1443397646383-16272048780e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1867&q=80');
   background-size: cover;
   background-position: bottom;
+}
+
+// test below
+
+.card {
+  .card-image {
+    height: 300px;
+    width: auto;
+    overflow: hidden;
+  }
+
+  .card-content {
+    height: 150px;
+    overflow: hidden;
+  }
+}
+
+#left-column {
+  p {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px 0 0 30px;
+
+    &:hover {
+      background: #26a69a;
+    }
+  }
 }
