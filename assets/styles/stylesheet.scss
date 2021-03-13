@@ -1,6 +1,15 @@
 //variables
 $black: #1d1d1f;
+$white: #fff;
 // variables
+
+// mixins
+
+@mixin testBorder($color: $black) {
+  border: 1px solid $color;
+}
+
+// mixins
 
 //common
 
@@ -8,7 +17,7 @@ html,
 body {
   overflow-x: hidden;
   width: 100vw;
-  font-family: 'Open Sans', YuGothic, serif;
+  font-family: "Open Sans", a-otf-gothic-bbb-pr6n, sans-serif;
   color: $black;
 }
 
@@ -16,41 +25,157 @@ i {
   padding: 0 12px;
 }
 
-.hero {
-  width: 100vw;
-  height: 100vh;
+.hiden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-image: url('https://images.unsplash.com/photo-1443397646383-16272048780e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1867&q=80');
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.min-height-100vh {
+  min-height: 100vh;
+}
+
+.a-in-this-class-text-black {
+  color: $black;
+}
+
+// common
+
+.datepicker-date-display {
+  display: none;
+}
+
+.cover-display-all {
+  height: 100vh;
+  width: 100vw;
+}
+
+.content-container-404 {
+  width: 50vw;
+  height: 50vh;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.top__cover-image-container {
+  background-image: url(../images/woman-covering-her-face.webp);
   background-size: cover;
-  background-position: bottom;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-// test below
-
-.card {
-  .card-image {
-    height: 300px;
-    width: auto;
-    overflow: hidden;
+@keyframes skew {
+  0% {
+    transform: none;
   }
-
-  .card-content {
-    height: 150px;
-    overflow: hidden;
+  33% {
+    transform: none;
+  }
+  33.3% {
+    transform: skewX(30deg);
+  }
+  33.6% {
+    transform: skewX(-30deg);
+  }
+  33.9% {
+    transform: none;
+  }
+  66% {
+    transform: none;
+  }
+  66.3% {
+    transform: skewX(5deg);
+  }
+  66.6% {
+    transform: skewX(-5deg);
+  }
+  66.9% {
+    transform: none;
+  }
+  77% {
+    transform: none;
+  }
+  77.3% {
+    transform: skewX(15deg);
+  }
+  77.6% {
+    transform: skewX(-15deg);
+  }
+  77.9% {
+    transform: none;
   }
 }
 
-#left-column {
-  p {
-    width: 100%;
-    padding: 15px;
-    border-radius: 30px 0 0 30px;
+.skew-effect {
+  animation: skew 2s infinite;
+}
 
-    &:hover {
-      background: #26a69a;
-    }
-  }
+/* #Progress
+================================================== */
+.progress-wrap {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#progress-wrap-arrow {
+  position: absolute;
+  text-align: center;
+  line-height: 46px;
+  font-size: 16px;
+  color: #ff4081;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #ff4081;
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
