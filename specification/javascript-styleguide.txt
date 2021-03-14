@@ -1,0 +1,5 @@
+Google JavaScript Style Guideを使用する
+以下は補足
+
+2．Source file basics
+2.1ファイル名にはアンダースコアではなくダッシュを使う。
